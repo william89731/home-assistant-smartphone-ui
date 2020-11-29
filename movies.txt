@@ -1,0 +1,12 @@
+film:
+  alias: film streaming
+  sequence:
+  - service: media_extractor.play_media
+    data_template:
+      entity_id: media_player.{{ states('input_select.device') }}
+      media_content_id: '{% if is_state("input_select.film_streaming", "doctor_strange")  %}
+        https://xndywhcadf.mstreamcdn.com/m/eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDYwMzg2OTYsImRhdGEiOlsiOTUuMjQ4LjIwMC4xMDEiLCIxejU5eW42cjlybGQiLCJuIiwyXX0.uCmgsijGkF91o1xyr7yaTzVzFKqgQ1CKH3PShX5BsNY.mp4
+        {% elif is_state("input_select.film_streaming", "terminator2") %} https://streamtape.com/get_video?id=QAJ1BPDWYyh0DjQ&expires=1606092274&ip=D0IsDRqZKxSHDN&token=jEynApSpVeXq&stream=1
+        {% elif is_state("input_select.film_streaming", "back_to_the_future") %} https://poxuhu.megaupload.to/hls/4ib565muf4i7bh3jemiqip7sn2bz46yjq3pq6ao7d,zc44axrlbmrdfq74njq,bc44axrlbmtgx6fczba,.urlset/master.m3u8
+        {% endif %}'
+      media_content_type: video/movie
