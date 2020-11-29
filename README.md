@@ -48,7 +48,8 @@ in your configuration.yaml:
 
 media_extractor:
 
-input select [here]
+
+input select [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/input.txt)
 
 script radio on line [here]
 
