@@ -34,6 +34,8 @@ example [here](https://github.com/william89731/home-assistant-smartphone-ui/blob
 
 # info
 
+example [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/rpi.txt)
+
 ![20201129_172207](https://user-images.githubusercontent.com/68069659/100547899-905e8300-3269-11eb-90bf-1e8d6f6be2dd.gif)
 
 # mediacenter
