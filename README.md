@@ -27,6 +27,8 @@ you ned to install:
 
 [browser mod](https://github.com/thomasloven/hass-browser_mod)
 
+example [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/light.txt)
+
 ![20201129_171719](https://user-images.githubusercontent.com/68069659/100547627-18438d80-3268-11eb-8e90-b736f2837fd9.gif)
 
 
