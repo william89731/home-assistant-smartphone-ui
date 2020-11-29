@@ -40,6 +40,24 @@ example [here](https://github.com/william89731/home-assistant-smartphone-ui/blob
 
 # mediacenter
 
+you need to install:
+
+[state switch](https://github.com/thomasloven/lovelace-state-switch)
+
+in your configuration.yaml:
+
+media_extractor:
+
+input select [here]
+
+script radio on line [here]
+
+script youtube [here]
+
+script movies stream [here]
+
+this section was a little complicated. It is well known that playing youtube videos and streaming movies is not easy. I found a way to do it: just use any media playback device, go to developer tools and see media content id
+
 ![20201129_172424](https://user-images.githubusercontent.com/68069659/100547987-111d7f00-326a-11eb-9349-749463623965.gif)
 
 
