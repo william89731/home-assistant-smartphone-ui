@@ -45,6 +45,7 @@ example [here](https://github.com/william89731/home-assistant-smartphone-ui/blob
 you need to install:
 
 [state switch](https://github.com/thomasloven/lovelace-state-switch)
+
 [media player popup card](https://github.com/DBuit/media_player-popup-card)
 
 in your configuration.yaml:
