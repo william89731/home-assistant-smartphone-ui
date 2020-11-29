@@ -1,0 +1,42 @@
+entity: input_boolean.light_view 
+entity_picture: /local/electric.gif
+show_entity_picture: true
+show_name: false
+aspect_ratio: 1/1
+show_state: null
+tap_action:
+  action: navigate
+  navigation_path: /lovelace/light
+styles:
+  grid:
+    - position: relative
+  custom_fields:
+    test:
+      - background-color: |
+          [[[
+            if (states['group.light_home'].state == 'on')
+              return "green";
+            return "red";
+          ]]]
+      - border-radius: 50%
+      - position: absolute
+      - left: 75%
+      - top: 10%
+      - height: 30px
+      - width: 30px
+      - font-size: 15px
+      - line-height: 25px
+  card:
+    - background-color: black
+    - transform: null
+    - border-radius: 20px
+    - box-shadow: null
+    - '--mdc-ripple-color': yellow
+    - '--mdc-ripple-press-opacity': 0.5
+  entity_picture:
+    - transform: scale(1.4
+    - animation: null
+custom_fields:
+  test: |
+    [[[ return  (states['group.light_home'].state )    ]]] 
+type: 'custom:button-card'
