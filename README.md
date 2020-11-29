@@ -4,8 +4,9 @@ i used the vertical and horizontal stack.
 
 you need to install:
 
-
 [hacs](https://github.com/hacs/integration)
+
+[card mod](https://github.com/thomasloven/lovelace-card-mod)
 
 
 [button card](https://github.com/custom-cards/button-card)
@@ -21,6 +22,10 @@ example button card [here](https://github.com/william89731/home-assistant-smartp
 
 
 # light
+
+you ned to install:
+
+[browser mod](https://github.com/thomasloven/hass-browser_mod)
 
 ![20201129_171719](https://user-images.githubusercontent.com/68069659/100547627-18438d80-3268-11eb-8e90-b736f2837fd9.gif)
 
