@@ -1,0 +1,13 @@
+radio:
+  alias: online radio
+  sequence:
+  - service: media_extractor.play_media
+    data_template:
+      entity_id: media_player.{{ states('input_select.device') }}
+      media_content_id: '{% if is_state("input_select.online_radio", "radio 105"  )  %}
+        http://icecast.unitedradio.it/Radio105.mp3 {% elif is_state("input_select.online_radio","radio
+        deejay") %} http://radiodeejay-lh.akamaihd.net/i/RadioDeejay_Live_1@189857/master.m3u8
+        {% elif is_state("input_select.online_radio", "RTL") %} http://shoutcast.rtl.it:3010/
+        {% elif is_state("input_select.online_radio", "radio24") %} http://icecast.unitedradio.it/Virgin.mp3
+        {% endif %}'
+      media_content_type: audio
