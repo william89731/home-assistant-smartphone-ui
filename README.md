@@ -1,2 +1,2 @@
-# home-assistant-ui
+# home-assistant-smartphone-ui
 home assistant fronted
