@@ -1,0 +1,42 @@
+input_select:
+  online_radio:
+    name: 'online_radio:'
+    options:
+      - radio 105
+      - radio deejay
+      - RTL
+      - radio24
+    icon: mdi:radio
+  youtube:
+     name: 'youtube:'
+     options:
+       - rosalia/relacion
+       - rnb 90
+       - relax
+       - 80 hit
+       - GG d AG
+       - queen/highlander
+     icon: mdi:youtube
+    
+  device:
+    name: 'device:'
+    options:
+      - "home_mini"
+      - "google_nest_hub"
+      - "mi_box_s" 
+      - "lg_webos_smart_tv"
+      - "tele_panasonic"
+      - "google_nest_hub"
+     
+    icon: mdi:devices
+    
+  film_streaming:
+    name: "film_streaming:"
+    options:
+      - doctor_strange
+      - terminator2
+      - back_to_the_future
+    icon: mdi:movie
+
+
+ 
