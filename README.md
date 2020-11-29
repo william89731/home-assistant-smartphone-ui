@@ -1,5 +1,8 @@
 # home-assistant-smartphone-ui
-you nedd to install:
+
+i used the vertcical and horizontal stack.
+
+you need to install:
 
 
 [hacs](https://github.com/hacs/integration)
@@ -7,10 +10,15 @@ you nedd to install:
 
 [button card](https://github.com/custom-cards/button-card)
 
+[weather-card](https://github.com/bramkragten/weather-card)
 
+example button card here
 
 
 ![20201129_170951](https://user-images.githubusercontent.com/68069659/100547255-0234cd80-3266-11eb-833a-3b52c8393b4d.gif)
+
+
+
 
 # light
 
