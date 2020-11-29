@@ -1,6 +1,6 @@
 # home-assistant-smartphone-ui
 
-i used the vertcical and horizontal stack.
+i used the vertical and horizontal stack.
 
 you need to install:
 
