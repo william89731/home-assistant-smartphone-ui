@@ -1,0 +1,120 @@
+type: 'custom:button-card'
+entity: sensor.temperatura_cpu
+entity_picture: /local/motherboard.png
+show_entity_picture: true
+aspect_ratio: 1/1
+show_name: false
+hold_action:
+  action: more-info
+tap_action:
+  action: call-service
+  service: browser_mod.popup
+  service_data:
+    title: RPI
+    card:
+      type: entities
+      entities:
+        - entity: sensor.temperatura_cpu
+        - entity: sensor.processor_temperature
+        - entity: sensor.disk_use_percent_home
+        - entity: sensor.memory_free
+        - entity: sensor.memory_use_percent
+        - entity: sensor.processor_use
+        - entity: sensor.last_boot
+          format: null
+        - entity: sensor.time_online
+        - entity: sensor.ha_start
+        - entity: binary_sensor.rpi_power_status
+        - entity: sensor.home_assistant_v2_db
+        - entity: sensor.time
+        - entity: sensor.date
+        - entity: sensor.swap_use_percent
+styles:
+  card:
+    - background-color: black
+    - box-shadow: null
+    - border-radius: 20%
+    - padding: 5%
+    - color: ivory
+    - font-size: 10px
+    - text-shadow: 0px 0px 5px black
+    - text-transform: capitalize
+    - transform: scale(0.95)
+    - '--mdc-ripple-color': yellow
+    - '--mdc-ripple-press-opacity': 0.5
+  grid:
+    - grid-template-areas: '"i temp" "n n" "cpu cpu" "ram ram" "sd sd"'
+    - grid-template-columns: 1fr 1fr
+    - grid-template-rows: 1fr min-content min-content min-content min-content
+  name:
+    - font-weight: bold
+    - font-size: 13px
+    - color: white
+    - align-self: middle
+    - justify-self: start
+    - padding-bottom: 4px
+  img_cell:
+    - justify-content: start
+    - align-items: start
+    - margin: none
+  entity_picture:
+    - color: |
+        [[[
+          if (entity.state < 1) return 'lime';
+          if (entity.state >= 60 && entity.state < 80) return 'orange';
+          else return 'red';
+        ]]]
+    - width: 90%
+    - margin-top: 2%
+    - margin-left: 10%
+  custom_fields:
+    temp:
+      - align-self: start
+      - justify-self: end
+    cpu:
+      - padding-bottom: 2px
+      - align-self: middle
+      - justify-self: start
+      - '--text-color-sensor': '[[[ if (states["sensor.processor_use"].state > 80) return "red"; ]]]'
+    ram:
+      - padding-bottom: 2px
+      - align-self: middle
+      - justify-self: start
+      - '--text-color-sensor': >-
+          [[[ if (states["sensor.memory_use_percent"].state > 80) return "red";
+          ]]]
+    sd:
+      - align-self: middle
+      - justify-self: start
+      - '--text-color-sensor': >-
+          [[[ if (states["sensor.disk_use_percent_home"].state > 80) return
+          "red"; ]]]
+custom_fields:
+  temp: |
+    [[[
+      return `<ha-icon
+        icon="mdi:thermometer"
+        style="width: 12px; height: 12px; color: yellow;">
+        </ha-icon><span>${entity.state}°C</span>`
+    ]]]
+  cpu: |
+    [[[
+      return `<ha-icon
+        icon="mdi:server"
+        style="width: 12px; height: 12px; color: deepskyblue;">
+        </ha-icon><span>CPU: <span style="color: var(--text-color-sensor);">${states['sensor.processor_use'].state}%</span></span>`
+    ]]]
+  ram: |
+    [[[
+      return `<ha-icon
+        icon="mdi:memory"
+        style="width: 12px; height: 12px; color: deepskyblue;">
+        </ha-icon><span>RAM: <span style="color: var(--text-color-sensor);">${states['sensor.memory_use_percent'].state}%</span></span>`
+    ]]]
+  sd: |
+    [[[
+      return `<ha-icon
+        icon="mdi:harddisk"
+        style="width: 12px; height: 12px; color: deepskyblue;">
+        </ha-icon><span>SD: <span style="color: var(--text-color-sensor);">${states['sensor.disk_use_percent_home'].state}%</span></span>`
+    ]]]
