@@ -51,13 +51,15 @@ media_extractor:
 
 input select [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/input.txt)
 
-script radio on line [here]
+script radio on line [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/radio.txt)
 
-script youtube [here]
+script youtube [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/youtube.txt)
 
-script movies stream [here]
+script movies stream [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/movies.txt)
 
 this section was a little complicated. It is well known that playing youtube videos and streaming movies is not easy. I found a way to do it: just use any media playback device, go to developer tools and see media content id
+
+example [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/mediacenter.txt)
 
 ![20201129_172424](https://user-images.githubusercontent.com/68069659/100547987-111d7f00-326a-11eb-9349-749463623965.gif)
 
