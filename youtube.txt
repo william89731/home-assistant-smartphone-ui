@@ -1,0 +1,14 @@
+youtube:
+  alias: youtube video
+  sequence:
+  - service: media_extractor.play_media
+    data_template:
+      entity_id: media_player.{{ states('input_select.device') }}
+      media_content_id: '{% if is_state("input_select.youtube", "rosalia/relacion"  )  %}
+        hGNYNoLOec0 {% elif is_state("input_select.youtube", "rnb 90") %} ar0Z4arDNL0
+        {% elif is_state("input_select.youtube", "relax") %} 7Ilu033ydSw {% elif is_state("input_select.youtube",
+        "80 hit") %} c40SjIZEfcg {% elif is_state("input_select.youtube", "GG d AG")
+        %} ZTNej2USaYk 
+        {% elif is_state("input_select.youtube", "queen/highlander") %} VEJ8lpCQbyw
+        {% endif %}'
+      media_content_type: video
