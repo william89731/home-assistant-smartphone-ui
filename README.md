@@ -14,7 +14,7 @@ you need to install:
 [OpenWeatherMap](https://www.home-assistant.io/integrations/openweathermap)
 
 
-![20201129_170951](https://user-images.githubusercontent.com/68069659/100547255-0234cd80-3266-11eb-833a-3b52c8393b4d.gif)
+![20201205_204614](https://user-images.githubusercontent.com/68069659/101262140-b0e07e80-373c-11eb-9e5f-71adc589817d.gif)
 
 do you want the code? look [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/button%20card.txt)
 
@@ -65,7 +65,7 @@ this section was a little complicated. It is well known that playing youtube vid
 
 example [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/mediacenter.txt)
 
-![20201129_172424](https://user-images.githubusercontent.com/68069659/100547987-111d7f00-326a-11eb-9349-749463623965.gif)
+![20201205_205333](https://user-images.githubusercontent.com/68069659/101265342-d625ba80-3745-11eb-9800-ad4f4ac11b80.gif)
 
 
 
