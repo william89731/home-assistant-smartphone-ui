@@ -42,7 +42,7 @@ do you want the code? look [here](https://github.com/william89731/home-assistant
 
 ![20201129_172207](https://user-images.githubusercontent.com/68069659/100547899-905e8300-3269-11eb-90bf-1e8d6f6be2dd.gif)
 
-doyou the code? look [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/info.txt)
+do you want the code? look [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/info.txt)
 
 # mediacenter
 
@@ -71,7 +71,7 @@ this section was a little complicated. It is well known that playing youtube vid
 
 ![20201205_205333](https://user-images.githubusercontent.com/68069659/101265342-d625ba80-3745-11eb-9800-ad4f4ac11b80.gif)
 
-example [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/mediacenter.txt)
+do you want th code? look [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/mediacenter.txt)
 
 
 
