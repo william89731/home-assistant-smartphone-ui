@@ -1,0 +1,285 @@
+type: vertical-stack 
+cards:
+  - type: horizontal-stack
+    cards:
+      - entity: alarm_control_panel.xiaomi_gateway_alarm
+        show_name: false
+        show_state: false
+        entity_picture: /local/safe.gif
+        show_entity_picture: true
+        aspect_ratio: 1.6/1
+        color_type: card
+        state:
+          - color: null
+            styles:
+              card:
+                - background-color: clack
+                - transform: null
+                - border-radius: 20px
+              entity_picture:
+                - filter: grayscale(100%)
+                - transform: scale(1)
+            value: disarmed
+          - color: 'rgb(0,0,255)'
+            styles:
+              card:
+                - background-color: black
+                - border-radius: 20px
+                - box-shadow: null
+                - transform: null
+                - '--mdc-ripple-color': yellow
+                - '--mdc-ripple-press-opacity': 0.5
+              entity_picture:
+                - transform: scale(1)
+            value: armed_away
+        style:
+          card:
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+        type: 'custom:button-card'
+      - entity: input_boolean.media_view
+        show_name: false
+        entity_picture: /local/dj.gif
+        show_entity_picture: true
+        aspect_ratio: 1.6/1
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/media
+        styles:
+          grid:
+            - position: relative
+          custom_fields:
+            test:
+              - background-color: |
+                  [[[
+                    if (states['group.media_player'].state == 'on')
+                      return "green";
+                    return "red";
+                  ]]]
+              - border-radius: 50%
+              - position: absolute
+              - left: 83%
+              - top: 2%
+              - height: 30px
+              - width: 30px
+              - font-size: 15px
+              - line-height: 25px
+          card:
+            - background-color: black
+            - transform: scale
+            - border-radius: 20px
+            - box-shadow: null
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+          entity_picture:
+            - transform: scale(1.5
+            - margin-left: null
+        custom_fields:
+          test: |
+            [[[ return  (states['group.media_player'].state )    ]]] 
+        type: 'custom:button-card'
+  - type: horizontal-stack
+    cards:
+      - entity: input_boolean.light_view
+        entity_picture: /local/electric.gif
+        show_entity_picture: true
+        show_name: false
+        aspect_ratio: 1/1
+        show_state: null
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/light
+        styles:
+          grid:
+            - position: relative
+          custom_fields:
+            test:
+              - background-color: |
+                  [[[
+                    if (states['group.light_home'].state == 'on')
+                      return "green";
+                    return "red";
+                  ]]]
+              - border-radius: 50%
+              - position: absolute
+              - left: 75%
+              - top: 10%
+              - height: 30px
+              - width: 30px
+              - font-size: 15px
+              - line-height: 25px
+          card:
+            - background-color: black
+            - transform: null
+            - border-radius: 20px
+            - box-shadow: null
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+          entity_picture:
+            - transform: scale(1.4
+            - animation: null
+        custom_fields:
+          test: |
+            [[[ return  (states['group.light_home'].state )    ]]] 
+        type: 'custom:button-card'
+      - entity: input_boolean.info_view
+        entity_picture: /local/info.gif
+        show_entity_picture: true
+        show_name: false
+        aspect_ratio: 1/1
+        show_state: null
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/info
+        styles:
+          card:
+            - background-color: black
+            - transform: null
+            - border-radius: 20px
+            - box-shadow: null
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+          entity_picture:
+            - transform: scale(1.7
+        type: 'custom:button-card'
+      - entity: input_boolean.grafici_view
+        entity_picture: /local/grafici2.gif
+        show_entity_picture: true
+        show_name: false
+        aspect_ratio: 1/1
+        show_state: null
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/grafici
+        styles:
+          card:
+            - background-color: black
+            - transform: null
+            - border-radius: 20px
+            - box-shadow: null
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+          entity_picture:
+            - transform: scale(2
+        type: 'custom:button-card'
+  - type: vertical-stack
+    cards:
+      - type: conditional
+        conditions:
+          - entity: weather.openweathermap
+            state: rainy
+        card:
+          type: 'custom:button-card'
+          entity: weather.openweathermap
+          name: rain
+          show_name: false
+          aspect_ratio: 1/1
+          color_type: card
+          color: black
+          show_entity_picture: true
+          entity_picture: /local/rain.gif
+          tap_action:
+            action: more-info
+          hold_action:
+            action: none
+          styles:
+            card:
+              - border-radius: 40px
+              - '--mdc-ripple-color': yellow
+              - '--mdc-ripple-press-opacity': 0.5
+            entity_picture:
+              - transform: scale(1.9
+      - type: conditional
+        conditions:
+          - entity: weather.en_casa
+            state: cloudy
+        card:
+          type: 'custom:button-card'
+          name: cloudy
+          entity: weather.openweathermap
+          tap_action:
+            action: more-info
+          show_name: false
+          aspect_ratio: 1/1
+          color_type: card
+          color: black
+          show_entity_picture: true
+          entity_picture: /local/cloudy1.gif
+          styles:
+            card:
+              - border-radius: 40px
+              - '--mdc-ripple-color': yellow
+              - '--mdc-ripple-press-opacity': 0.5
+            entity_picture:
+              - transform: scale(1.9
+      - type: conditional
+        conditions:
+          - entity: weather.en_casa
+            state: partlycloudy
+        card:
+          type: 'custom:button-card'
+          name: partlycloudy
+          entity: weather.openweathermap
+          tap_action:
+            action: more-info
+          show_name: false
+          aspect_ratio: 1/1
+          color_type: card
+          color: black
+          show_entity_picture: true
+          entity_picture: /local/cloudy1.gif
+          styles:
+            card:
+              - border-radius: 40px
+              - '--mdc-ripple-color': yellow
+              - '--mdc-ripple-press-opacity': 0.5
+            entity_picture:
+              - transform: scale(1.9
+      - type: conditional
+        conditions:
+          - entity: weather.en_casa
+            state: sunny
+        card:
+          type: 'custom:button-card'
+          name: sunny
+          entity: weather.openweathermap
+          tap_action:
+            action: more-info
+          show_name: false
+          aspect_ratio: 1/1
+          color_type: card
+          color: black
+          show_entity_picture: true
+          entity_picture: /local/suny.gif
+          styles:
+            card:
+              - border-radius: 40px
+              - '--mdc-ripple-color': yellow
+              - '--mdc-ripple-press-opacity': 0.5
+            entity_picture:
+              - transform: scale(1.9
+      - type: conditional
+        conditions:
+          - entity: weather.openweathermap
+            state: pouring
+        card:
+          type: 'custom:button-card'
+          entity: weather.openweathermap
+          name: pouring
+          show_name: false
+          aspect_ratio: 1/1
+          color_type: card
+          color: black
+          show_entity_picture: true
+          entity_picture: /local/pouring.gif
+          tap_action:
+            action: more-info
+          hold_action:
+            action: none
+          styles:
+            card:
+              - border-radius: 40px
+              - '--mdc-ripple-color': yellow
+              - '--mdc-ripple-press-opacity': 0.5
+            entity_picture:
+              - transform: scale(1.9
