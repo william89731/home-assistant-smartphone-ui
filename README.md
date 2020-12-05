@@ -16,7 +16,7 @@ you need to install:
 
 ![20201205_204614](https://user-images.githubusercontent.com/68069659/101262140-b0e07e80-373c-11eb-9e5f-71adc589817d.gif)
 
-do you want the code? look [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/button%20card.txt)
+do you want the code? look [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/tab%20fronted.txt)
 
 
 
