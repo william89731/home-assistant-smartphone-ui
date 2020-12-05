@@ -46,7 +46,13 @@ do you want the code? look [here](https://github.com/william89731/home-assistant
 
 # graphics
 
+you need to install:
+
+[swipe card](https://github.com/bramkragten/swipe-card)
+
 ![20201205_204937](https://user-images.githubusercontent.com/68069659/101266371-931c1500-374e-11eb-89f4-fd4a50686bc7.gif)
+
+do you want the code? look [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/graphics.txt)
 
 # mediacenter
 
