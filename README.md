@@ -29,16 +29,20 @@ you ned to install:
 
 [light popup card](https://github.com/DBuit/light-popup-card)
 
-example [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/light.txt)
+
 
 ![20201129_171719](https://user-images.githubusercontent.com/68069659/100547627-18438d80-3268-11eb-8e90-b736f2837fd9.gif)
+
+do you want the code? look [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/light.txt)
 
 
 # info
 
-example [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/rpi.txt)
+
 
 ![20201129_172207](https://user-images.githubusercontent.com/68069659/100547899-905e8300-3269-11eb-90bf-1e8d6f6be2dd.gif)
+
+doyou the code? look [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/info.txt)
 
 # mediacenter
 
@@ -63,9 +67,11 @@ script movies stream [here](https://github.com/william89731/home-assistant-smart
 
 this section was a little complicated. It is well known that playing youtube videos and streaming movies is not easy. I found a way to do it: just use any media playback device, go to developer tools and see media content id
 
-example [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/mediacenter.txt)
+
 
 ![20201205_205333](https://user-images.githubusercontent.com/68069659/101265342-d625ba80-3745-11eb-9800-ad4f4ac11b80.gif)
+
+example [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/mediacenter.txt)
 
 
 
