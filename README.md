@@ -44,6 +44,10 @@ do you want the code? look [here](https://github.com/william89731/home-assistant
 
 do you want the code? look [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/info.txt)
 
+# graphics
+
+![20201205_204937](https://user-images.githubusercontent.com/68069659/101266371-931c1500-374e-11eb-89f4-fd4a50686bc7.gif)
+
 # mediacenter
 
 you need to install:
