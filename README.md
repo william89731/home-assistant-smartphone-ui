@@ -13,7 +13,7 @@ you need to install:
 
 [OpenWeatherMap](https://www.home-assistant.io/integrations/openweathermap)
 
-example button card [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/button%20card.txt)
+do you want the code? look [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/button%20card.txt)
 
 
 ![20201129_170951](https://user-images.githubusercontent.com/68069659/100547255-0234cd80-3266-11eb-833a-3b52c8393b4d.gif)
