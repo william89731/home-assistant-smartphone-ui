@@ -11,7 +11,7 @@ you need to install:
 
 [button card](https://github.com/custom-cards/button-card)
 
-[weather-card](https://github.com/bramkragten/weather-card)
+[OpenWeatherMap](https://www.home-assistant.io/integrations/openweathermap)
 
 example button card [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/button%20card.txt)
 
