@@ -1,0 +1,888 @@
+type: vertical-stack  
+cards:
+  - cards:
+      - type: 'custom:button-card'
+        entity: sensor.time_online
+        entity_picture: /local/ha.png
+        show_entity_picture: true
+        aspect_ratio: 1/1
+        show_name: false
+        styles:
+          card:
+            - background-color: black
+            - box-shadow: null
+            - border-radius: 20%
+            - padding: 5%
+            - color: ivory
+            - font-size: 10px
+            - text-shadow: 0px 0px 5px black
+            - text-transform: capitalize
+            - transform: scale(0.95
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+          grid:
+            - grid-template-areas: '"i temp" "n n" "cpu cpu" "temp1 temp1" "umi umi" '
+            - grid-template-columns: 1fr 1fr
+            - grid-template-rows: 1fr min-content min-content min-content min-content
+          name:
+            - font-weight: bold
+            - font-size: 10px
+            - color: white
+            - align-self: middle
+            - justify-self: start
+            - padding-bottom: 3px
+          img_cell:
+            - justify-content: start
+            - align-items: start
+            - margin-left: null
+          entity_picture:
+            - color: |
+                [[[
+                  if (entity.state < 60) return 'lime';
+                  if (entity.state >= 60 && entity.state < 80) return 'orange';
+                  else return 'red';
+                ]]]
+            - width: 90%
+            - margin-top: 5%
+            - margin-left: 10%
+          custom_fields:
+            temp:
+              - align-self: start
+              - justify-self: start
+              - margin-left: null
+            cpu:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+              - '--text-color-sensor': >-
+                  [[[ if (states["sensor.ha_start"].state > 30) return "red";
+                  ]]]
+            temp1:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+              - '--text-color-sensor': >-
+                  [[[ if (states["sensor.speedtest_download"].state < 400)
+                  return "red"; ]]]
+            umi:
+              - align-self: middle
+              - justify-self: start
+              - '--text-color-sensor': >-
+                  [[[ if (states["sensor.last_boot"].state > 300) return "red";
+                  ]]]
+        custom_fields:
+          temp: |
+            [[[
+              return `<ha-icon
+                icon="mdi:clock"
+                style="width: 12px; height: 12px; color: yellow;">
+                </ha-icon><span>${entity.state}H</span>`
+            ]]]
+          cpu: |
+            [[[
+              return `<ha-icon
+                icon="mdi:speedometer-medium"
+                style="width: 12px; height: 12px; color: deepskyblue;">
+                </ha-icon><span>START: <span style="color: var(--text-color-sensor);">${states['sensor.ha_start'].state}</span></span>`
+            ]]]
+          temp1: |
+            [[[
+              return `<ha-icon
+                icon="mdi:speedometer"
+                style="width: 12px; height: 12px; color: deepskyblue;">
+                </ha-icon><span>DATE: <span style="">${states['sensor.date'].state}</span></span>`
+            ]]]
+          umi: |
+            [[[
+              return `<ha-icon
+                icon="mdi:server"
+                style="width: 12px; height: 12px; color: deepskyblue;">
+                </ha-icon><span>UPT: <span style="color: var(--text-color-sensor);">${states['sensor.uptime_nuc'].state}</span></span>`
+            ]]]
+      - type: 'custom:button-card'
+        entity: sensor.temperatura_cpu
+        entity_picture: /local/motherboard.png
+        show_entity_picture: true
+        aspect_ratio: 1/1
+        show_name: false
+        hold_action:
+          action: more-info
+        tap_action:
+          action: call-service
+          service: browser_mod.popup
+          service_data:
+            title: RPI
+            card:
+              type: entities
+              entities:
+                - entity: sensor.temperatura_cpu
+                - entity: sensor.processor_temperature
+                - entity: sensor.disk_use_percent_home
+                - entity: sensor.memory_free
+                - entity: sensor.memory_use_percent
+                - entity: sensor.processor_use
+                - entity: sensor.last_boot
+                  format: null
+                - entity: sensor.time_online
+                - entity: sensor.ha_start
+                - entity: binary_sensor.rpi_power_status
+                - entity: sensor.home_assistant_v2_db
+                - entity: sensor.time
+                - entity: sensor.date
+                - entity: sensor.swap_use_percent
+        styles:
+          card:
+            - background-color: black
+            - box-shadow: null
+            - border-radius: 20%
+            - padding: 5%
+            - color: ivory
+            - font-size: 10px
+            - text-shadow: 0px 0px 5px black
+            - text-transform: capitalize
+            - transform: scale(0.95)
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+          grid:
+            - grid-template-areas: '"i temp" "n n" "cpu cpu" "ram ram" "sd sd"'
+            - grid-template-columns: 1fr 1fr
+            - grid-template-rows: 1fr min-content min-content min-content min-content
+          name:
+            - font-weight: bold
+            - font-size: 13px
+            - color: white
+            - align-self: middle
+            - justify-self: start
+            - padding-bottom: 4px
+          img_cell:
+            - justify-content: start
+            - align-items: start
+            - margin: none
+          entity_picture:
+            - color: |
+                [[[
+                  if (entity.state < 1) return 'lime';
+                  if (entity.state >= 60 && entity.state < 80) return 'orange';
+                  else return 'red';
+                ]]]
+            - width: 90%
+            - margin-top: 2%
+            - margin-left: 10%
+          custom_fields:
+            temp:
+              - align-self: start
+              - justify-self: end
+            cpu:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+              - '--text-color-sensor': >-
+                  [[[ if (states["sensor.processor_use"].state > 80) return
+                  "red"; ]]]
+            ram:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+              - '--text-color-sensor': >-
+                  [[[ if (states["sensor.memory_use_percent"].state > 80) return
+                  "red"; ]]]
+            sd:
+              - align-self: middle
+              - justify-self: start
+              - '--text-color-sensor': >-
+                  [[[ if (states["sensor.disk_use_percent_home"].state > 80)
+                  return "red"; ]]]
+        custom_fields:
+          temp: |
+            [[[
+              return `<ha-icon
+                icon="mdi:thermometer"
+                style="width: 12px; height: 12px; color: yellow;">
+                </ha-icon><span>${entity.state}°C</span>`
+            ]]]
+          cpu: |
+            [[[
+              return `<ha-icon
+                icon="mdi:server"
+                style="width: 12px; height: 12px; color: deepskyblue;">
+                </ha-icon><span>CPU: <span style="color: var(--text-color-sensor);">${states['sensor.processor_use'].state}%</span></span>`
+            ]]]
+          ram: |
+            [[[
+              return `<ha-icon
+                icon="mdi:memory"
+                style="width: 12px; height: 12px; color: deepskyblue;">
+                </ha-icon><span>RAM: <span style="color: var(--text-color-sensor);">${states['sensor.memory_use_percent'].state}%</span></span>`
+            ]]]
+          sd: |
+            [[[
+              return `<ha-icon
+                icon="mdi:harddisk"
+                style="width: 12px; height: 12px; color: deepskyblue;">
+                </ha-icon><span>SD: <span style="color: var(--text-color-sensor);">${states['sensor.disk_use_percent_home'].state}%</span></span>`
+            ]]]
+      - type: 'custom:button-card'
+        entity: sensor.temperatura_casa_temperature
+        entity_picture: /local/casa3.png
+        show_entity_picture: true
+        aspect_ratio: 1/1
+        show_name: false
+        styles:
+          card:
+            - background-color: black
+            - box-shadow: null
+            - border-radius: 20%
+            - padding: 5%
+            - color: ivory
+            - font-size: 10px
+            - text-shadow: 0px 0px 5px black
+            - text-transform: capitalize
+            - transform: scale(0.95)
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+          grid:
+            - grid-template-areas: '"i temp" "n n" "cpu cpu" "ram ram" "sd sd"'
+            - grid-template-columns: 1fr 1fr
+            - grid-template-rows: 1fr min-content min-content min-content min-content
+          name:
+            - font-weight: bold
+            - font-size: 13px
+            - color: white
+            - align-self: middle
+            - justify-self: start
+            - padding-bottom: 4px
+          img_cell:
+            - justify-content: start
+            - align-items: start
+            - margin: none
+          entity_picture:
+            - color: |
+                [[[
+                  if (entity.state < 1) return 'lime';
+                  if (entity.state >= 60 && entity.state < 80) return 'orange';
+                  else return 'red';
+                ]]]
+            - width: 90%
+            - margin-top: 2%
+            - margin-left: 10%
+          custom_fields:
+            temp:
+              - align-self: start
+              - justify-self: end
+            cpu:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+              - '--text-color-sensor': >-
+                  [[[ if (states["sensor.processor_use"].state > 80) return
+                  "red"; ]]]
+            ram:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+              - '--text-color-sensor': >-
+                  [[[ if (states["sensor.memory_use_percent"].state > 80) return
+                  "red"; ]]]
+            sd:
+              - align-self: middle
+              - justify-self: start
+              - '--text-color-sensor': >-
+                  [[[ if (states["sensor.disk_use_percent_home"].state > 80)
+                  return "red"; ]]]
+        custom_fields:
+          temp: |
+            [[[
+              return `<ha-icon
+                icon="mdi:thermometer"
+                style="width: 12px; height: 12px; color: yellow;">
+                </ha-icon><span>${entity.state}°C</span>`
+            ]]]
+          cpu: |
+            [[[
+              return `<ha-icon
+                icon="mdi:water-percent"
+                style="width: 12px; height: 12px; color: deepskyblue;">
+                </ha-icon><span>UMI: <span style="color: var(--text-color-sensor);">${states['sensor.0x00158d00040e1174_humidity'].state}%</span></span>`
+            ]]]
+          ram: |
+            [[[
+              return `<ha-icon
+                icon="mdi:memory"
+                style="width: 12px; height: 12px; color: green;">
+                </ha-icon><span>TMP.E: <span style="color: var(--text-color-sensor);">${states['sensor.openweathermap_temperature'].state}°c</span></span>`
+            ]]]
+          sd: |
+            [[[
+              return `<ha-icon
+                icon="mdi:water-percent"
+                style="width: 12px; height: 12px; color: green;">
+                </ha-icon><span>UMI.E: <span style="color: var(--text-color-sensor);">${states['sensor.openweathermap_humidity'].state}%</span></span>`
+            ]]]
+    type: horizontal-stack
+  - cards:
+      - type: 'custom:button-card'
+        entity: sensor.desktop_3d0msn7_intel_celeron_j3455_temperatures_cpu_package
+        entity_picture: /local/computer1.png
+        show_entity_picture: true
+        aspect_ratio: 1/1
+        show_name: false
+        hold_action:
+          action: more-info
+        tap_action:
+          action: call-service
+          service: browser_mod.popup
+          service_data:
+            title: MINI PC
+            card:
+              type: entities
+              entities:
+                - entity: >-
+                    sensor.desktop_3d0msn7_intel_celeron_j3455_temperatures_cpu_package
+                  name: temperatura cpu
+                - entity: sensor.desktop_3d0msn7_ssd_128g_temperatures_temperature
+                  name: temperatura ssd
+                - entity: sensor.desktop_3d0msn7_ssd_128g_load_used_space
+                  name: spazio utilizzato
+                - entity: sensor.desktop_3d0msn7_intel_celeron_j3455_load_cpu_total
+                  name: cpu
+                - entity: >-
+                    sensor.desktop_3d0msn7_intel_celeron_j3455_powers_cpu_package
+                  name: power cpu
+        styles:
+          card:
+            - background-color: black
+            - box-shadow: null
+            - border-radius: 20%
+            - padding: 5%
+            - color: ivory
+            - font-size: 10px
+            - text-shadow: 0px 0px 5px black
+            - text-transform: capitalize
+            - transform: null
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+          grid:
+            - grid-template-areas: '"i temp" "n n" "cpu cpu" "ram ram" "sd sd"'
+            - grid-template-columns: 1fr 1fr
+            - grid-template-rows: 1fr min-content min-content min-content min-content
+          name:
+            - font-weight: bold
+            - font-size: 13px
+            - color: white
+            - align-self: middle
+            - justify-self: start
+            - padding-bottom: 4px
+          img_cell:
+            - justify-content: start
+            - align-items: start
+            - margin: none
+          entity_picture:
+            - color: |
+                [[[
+                  if (entity.state < 1) return 'lime';
+                  if (entity.state >= 60 && entity.state < 80) return 'orange';
+                  else return 'red';
+                ]]]
+            - width: 89%
+            - margin-top: 10%
+            - margin-left: 5%
+          custom_fields:
+            temp:
+              - align-self: start
+              - justify-self: end
+            cpu:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+              - '--text-color-sensor': >-
+                  [[[ if
+                  (states["sensor.desktop_3d0msn7_intel_celeron_j3455_load_cpu_total"].state
+                  > 80) return "red"; ]]]
+            ram:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+              - '--text-color-sensor': >-
+                  [[[ if
+                  (states["sensor.desktop_3d0msn7_generic_memory_load_memory"].state
+                  > 80) return "red"; ]]]
+            sd:
+              - align-self: middle
+              - justify-self: start
+              - '--text-color-sensor': >-
+                  [[[ if
+                  (states["sensor.desktop_3d0msn7_ssd_128g_load_used_space"].state
+                  > 80) return "red"; ]]]
+        custom_fields:
+          temp: |
+            [[[
+              return `<ha-icon
+                icon="mdi:thermometer"
+                style="width: 12px; height : 12px; color: yellow;">
+                </ha-icon><span>${entity.state}°C</span>`
+            ]]]
+          cpu: |
+            [[[
+              return `<ha-icon
+                icon="mdi:server"
+                style="width: 12px; height: 12px; color: deepskyblue;">
+                </ha-icon><span>CPU: <span style="color: var(--text-color-sensor);">${states['sensor.desktop_3d0msn7_intel_celeron_j3455_load_cpu_total'].state}%</span></span>`
+            ]]]
+          ram: |
+            [[[
+              return `<ha-icon
+                icon="mdi:memory"
+                style="width: 12px; height: 12px; color: deepskyblue;">
+                </ha-icon><span>RAM: <span style="color: var(--text-color-sensor);">${states['sensor.desktop_3d0msn7_generic_memory_load_memory'].state}%</span></span>`
+            ]]]
+          sd: |
+            [[[
+              return `<ha-icon
+                icon="mdi:harddisk"
+                style="width: 12px; height: 12px; color: deepskyblue;">
+                </ha-icon><span>SSD: <span style="color: var(--text-color-sensor);">${states['sensor.desktop_3d0msn7_ssd_128g_load_used_space'].state}%</span></span>`
+            ]]]
+      - entity: sensor.conbee2
+        show_name: false
+        show_state: true
+        aspect_ratio: 1/1
+        entity_picture: /local/usb3.png
+        show_entity_picture: true
+        tap_action:
+          action: call-service
+          service: browser_mod.popup
+          service_data:
+            title: DISPOSITIVI ZIGBEE
+            card:
+              type: entities
+              entities:
+                - entity: light.xiaomi_gateway_light
+                - entity: light.luce_sala_light
+                - entity: light.luce_sala_rgb_light
+                - entity: light.luce_cucina_light
+                - entity: light.luce_corridoio_light
+                - entity: light.luce_bagno_light
+                - entity: light.luce_letto1_light
+                - entity: light.luce_letto2_light
+                - entity: binary_sensor.open_close_cucina_contact
+                - entity: binary_sensor.open_close_sala_contact
+                - entity: binary_sensor.smoke_smoke
+                - entity: binary_sensor.motion_bagno_occupancy
+                - entity: binary_sensor.motion_letto1_occupancy
+                - entity: sensor.temperatura_casa_temperature
+                - entity: sensor.0x00158d00040e1174_humidity
+                - entity: switch.smartplug_letto1_switch
+                - entity: switch.smartplug_sala_switch
+                - entity: switch.smartplug_ups_switch
+        state:
+          - color: 'rgb(255,100,100)'
+            icon: null
+            styles:
+              card:
+                - transform: null
+            value: offline
+          - color: 'rgb(0,0,255)'
+            styles:
+              card:
+                - background-color: null
+                - transform: null
+                - border-radius: null
+                - box-shadow: null
+              entity_picture:
+                - transform: scale(1.6
+            value: online
+        style: |
+          ha-card {
+           background-color: black ;
+           border-radius: 20px ;
+           --mdc-ripple-color: yellow;
+           --mdc-ripple-press-opacity': 0.5;
+          }
+        type: 'custom:button-card'
+      - type: 'custom:button-card'
+        entity: sensor.time
+        entity_picture: /local/speed.png
+        show_entity_picture: true
+        aspect_ratio: 1/1
+        show_name: false
+        styles:
+          card:
+            - background-color: black
+            - box-shadow: null
+            - border-radius: 20%
+            - padding: 5%
+            - color: ivory
+            - font-size: 10px
+            - text-shadow: 0px 0px 5px black
+            - text-transform: capitalize
+            - transform: null
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+          grid:
+            - grid-template-areas: '"i temp" "n n" "cpu cpu" "temp1 temp1" "umi umi" '
+            - grid-template-columns: 1fr 1fr
+            - grid-template-rows: 1fr min-content min-content min-content min-content
+          name:
+            - font-weight: bold
+            - font-size: 10px
+            - color: white
+            - align-self: middle
+            - justify-self: start
+            - padding-bottom: 3px
+          img_cell:
+            - justify-content: start
+            - align-items: start
+            - margin-left: null
+          entity_picture:
+            - color: |
+                [[[
+                  if (entity.state < 60) return 'lime';
+                  if (entity.state >= 60 && entity.state < 80) return 'orange';
+                  else return 'red';
+                ]]]
+            - width: 90%
+            - margin-top: 5%
+            - margin-left: 10%
+          custom_fields:
+            temp:
+              - align-self: start
+              - justify-self: start
+              - margin-left: null
+            cpu:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+              - '--text-color-sensor': >-
+                  [[[ if (states["sensor.ha_start"].state > 30) return "red";
+                  ]]]
+            temp1:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+              - '--text-color-sensor': >-
+                  [[[ if (states["sensor.speedtest_download"].state < 400)
+                  return "red"; ]]]
+            umi:
+              - align-self: middle
+              - justify-self: start
+              - '--text-color-sensor': >-
+                  [[[ if (states["sensor.last_boot"].state > 300) return "red";
+                  ]]]
+        custom_fields:
+          temp: |
+            [[[
+              return `<ha-icon
+                icon="mdi:clock"
+                style="width: 12px; height: 12px; color: yellow;">
+                </ha-icon><span>${entity.state}H</span>`
+            ]]]
+          cpu: |
+            [[[
+              return `<ha-icon
+                icon="mdi:speedometer-medium"
+                style="width: 12px; height: 12px; color: deepskyblue;">
+                </ha-icon><span>PING: <span style="color: var(--text-color-sensor);">${states['sensor.speedtest_ping'].state}</span></span>`
+            ]]]
+          temp1: |
+            [[[
+              return `<ha-icon
+                icon="mdi:speedometer"
+                style="width: 12px; height: 12px; color: deepskyblue;">
+                </ha-icon><span>DOWN: <span style="color: var(--text-color-sensor);">${states['sensor.speedtest_download'].state}M/s</span></span>`
+            ]]]
+          umi: |
+            [[[
+              return `<ha-icon
+                icon="mdi:server"
+                style="width: 12px; height: 12px; color: deepskyblue;">
+                </ha-icon><span>UP: <span style="color: var(--text-color-sensor);">${states['sensor.speedtest_upload'].state}M/s</span></span>`
+            ]]]
+    type: horizontal-stack
+  - cards:
+      - entity: sensor.count_entities_2
+        entity_picture: /local/eye.png
+        show_entity_picture: true
+        show_name: false
+        show_state: true
+        aspect_ratio: 1/1
+        styles:
+          card:
+            - transform: null
+            - border-radius: 20px
+            - box-shadow: null
+            - background-color: black
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+          icon:
+            - transform: null
+        type: 'custom:button-card'
+      - entity: binary_sensor.rpi_power_status
+        entity_picture: /local/power1.png
+        show_entity_picture: true
+        show_name: false
+        show_state: true
+        aspect_ratio: 1/1
+        styles:
+          card:
+            - transform: null
+            - border-radius: 20px
+            - box-shadow: null
+            - background-color: black
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+          entity_picture:
+            - transform: scale(1)
+            - color: 'rgb(0,255,0)'
+        type: 'custom:button-card'
+      - entity: sensor.latest_version
+        entity_picture: /local/python.png
+        show_entity_picture: true
+        name: hass
+        aspect_ratio: 1/1
+        show_state: null
+        styles:
+          card:
+            - background-color: black
+            - transform: null
+            - border-radius: 20px
+            - box-shadow: null
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+          entity_picture:
+            - transform: scale(1.3
+        type: 'custom:button-card'
+    type: horizontal-stack
+  - cards:
+      - entity: binary_sensor.updater
+        entity_picture: /local/attention.png
+        show_entity_picture: true
+        name: updater
+        aspect_ratio: 1/1
+        show_state: null
+        state:
+          - color: null
+            styles:
+              card:
+                - transform: null
+              entity_picture:
+                - filter: grayscale(100%
+            value: 'off'
+          - color: 'rgb(0,0,255)'
+            styles:
+              card:
+                - background-color: black
+                - transform: null
+                - box-shadow: null
+              entity_picture:
+                - transform: null
+                - color: 'rgb(229,190,1)'
+                - animation: blink 3s linear infinite
+            value: 'on'
+        style: |
+          ha-card {
+           background-color: black ;
+           border-radius: 20px ;
+           --mdc-ripple-color: yellow;
+           --mdc-ripple-press-opacity': 0.5;
+          }
+        type: 'custom:button-card'
+      - entity: sensor.hacs
+        entity_picture: /local/attention.png
+        show_entity_picture: true
+        name: hacs
+        show_icon: true
+        aspect_ratio: 1/1
+        state:
+          - color: null
+            styles:
+              card:
+                - transform: null
+                - background-color: black
+                - filter: grayscale(100%
+            value: '0'
+          - color: 'rgb(229,190,10)'
+            icon: null
+            operator: '>'
+            styles:
+              card:
+                - transform: null
+                - animation: null
+                - border: null
+              entity_picture:
+                - transform: null
+                - animation: blink 3s linear infinite
+            value: 0
+        style: |
+          ha-card {
+           background-color: black ;
+           border-radius: 20px ;
+           --mdc-ripple-color: yellow;
+           --mdc-ripple-press-opacity: 0.5;
+          }
+        type: 'custom:button-card'
+      - entity: sensor.supervisor_updates
+        entity_picture: /local/attention.png
+        show_entity_picture: true
+        aspect_ratio: 1/1
+        name: addons
+        show_state: false
+        state:
+          - color: null
+            styles:
+              entity_picture:
+                - filter: grayscale(100%
+              card:
+                - transform: null
+                - border-radius: 20px
+                - background-color: black
+                - '--mdc-ripple-color': yellow
+                - '--mdc-ripple-press-opacity': 0.5
+            value: false
+          - color: 'rgb(0,0,255)'
+            styles:
+              card:
+                - background-color: black
+                - transform: null
+                - border-radius: 20px
+                - box-shadow: null
+                - '--mdc-ripple-color': yellow
+                - '--mdc-ripple-press-opacity': 0.5
+              entity_picture:
+                - animation: blink 3s linear infinite
+            operator: '>'
+            value: 0
+        type: 'custom:button-card'
+    type: horizontal-stack
+  - type: horizontal-stack
+    cards:
+      - entity: binary_sensor.hassoss_update_available
+        entity_picture: /local/attention.png
+        show_entity_picture: true
+        name: hassOS
+        aspect_ratio: 1/1
+        show_state: null
+        state:
+          - color: null
+            styles:
+              card:
+                - transform: null
+                - background-color: null
+              entity_picture:
+                - filter: grayscale(100%
+            value: 'off'
+          - color: 'rgb(0,0,255)'
+            styles:
+              card:
+                - background-color: null
+                - transform: null
+                - border: null
+                - box-shadow: null
+              icon:
+                - transform: null
+                - animation: blink 3s linear infinite
+            operator: '!='
+            value: 'off'
+        style: |
+          ha-card {
+           background-color: black ;
+           border-radius: 20px ;
+           --mdc-ripple-color: yellow;
+           --mdc-ripple-press-opacity': 0.5;
+          }
+        type: 'custom:button-card'
+      - entity: sensor.unavailable_entities
+        entity_picture: /local/attention.png
+        show_entity_picture: true
+        name: entity
+        aspect_ratio: 1/1
+        show_name: false
+        show_state: true
+        state:
+          - color: null
+            styles:
+              card:
+                - transform: null
+              entity_picture:
+                - filter: grayscale(100%
+            value: '0'
+          - color: 'rgb(0,0,255)'
+            styles:
+              card:
+                - background-color: null
+                - transform: null
+                - border: null
+                - box-shadow: null
+                - text-color: null
+              entity_picture:
+                - transform: null
+                - color: null
+                - animation: blink 3s linear infinite
+            operator: '>'
+            value: 0
+        style: |
+          ha-card {
+           background-color: black ;
+           border-radius: 20px ;
+           --mdc-ripple-color: yellow;
+           --mdc-ripple-press-opacity': 0.5;
+          }
+        type: 'custom:button-card'
+      - entity: group.human_presence
+        show_state: true
+        show_name: false
+        entity_picture: /local/vitru.png
+        show_entity_picture: true
+        aspect_ratio: 1/1
+        tap_action:
+          action: more-info
+        state:
+          - color: null
+            styles:
+              entity_picture:
+                - filter: grayscale(100%)
+                - transform: scale(1.3)
+              card:
+                - transform: null
+                - background-color: null
+            value: not_home
+          - color: null
+            icon: null
+            styles:
+              entity_picture:
+                - transform: scale(1.5
+              card:
+                - background-color: null
+                - transform: null
+                - border-radius: null
+                - box-shadow: null
+              icon:
+                - transform: null
+            value: home
+        style: |
+          ha-card {
+           background-color: black ;
+           border-radius: 20px ;
+           --mdc-ripple-color: yellow;
+           --mdc-ripple-press-opacity': 0.5;
+          }      
+        type: 'custom:button-card'
+  - entity: sensor.hass_installed_version
+    entity_picture: /local/back2.gif
+    show_entity_picture: true
+    show_name: false
+    aspect_ratio: 3.5/1
+    show_state: null
+    tap_action:
+      action: navigate
+      navigation_path: lovelace/front
+    styles:
+      card:
+        - background-color: black
+        - transform: scale(1
+        - border-radius: 20px
+        - box-shadow: null
+        - '--mdc-ripple-color': yellow
+        - '--mdc-ripple-press-opacity': 0.5
+      entity_picture:
+        - transform: scale(0.7
+    type: 'custom:button-card'
