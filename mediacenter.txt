@@ -1,0 +1,450 @@
+type: vertical-stack 
+cards:
+  - type: horizontal-stack
+    cards:
+      - entity: media_player.home_mini
+        name: mini
+        entity_picture: /local/google1.png
+        show_entity_picture: true
+        aspect_ratio: 1/1
+        hold_action:
+          action: more-info
+        tap_action:
+          action: call-service
+          service: browser_mod.popup
+          service_data:
+            title: volume
+            card:
+              type: 'custom:media_player-popup-card'
+              entity: media_player.home_mini
+              sliderWidth: 100px
+              sliderHeight: 250px
+        styles:
+          entity_picture:
+            - transform: scale(1.4
+            - filter: null
+          name:
+            - transform: scale(1.5
+            - text-transform: null
+          grid:
+            - position: relative
+          custom_fields:
+            test:
+              - background-color: |
+                  [[[
+                    if (states['media_player.home_mini'].state == 'playing')
+                      return "green";
+                    return "red";
+                  ]]]
+              - border-radius: 50%
+              - position: absolute
+              - left: 80%
+              - top: 10%
+              - height: 20px
+              - width: 20px
+              - font-size: 8px
+              - line-height: 20px
+          card:
+            - transform: scale(0.7
+            - border-radius: 20px
+            - background-color: black
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+        custom_fields:
+          test: |
+            [[[ return (states['media_player.home_mini'].state) ]]] 
+        type: 'custom:button-card'
+      - entity: media_player.google_nest_hub
+        name: nest
+        entity_picture: /local/google1.png
+        show_entity_picture: true
+        aspect_ratio: 1/1
+        hold_action:
+          action: more-info
+        tap_action:
+          action: call-service
+          service: browser_mod.popup
+          service_data:
+            title: volume
+            card:
+              type: 'custom:media_player-popup-card'
+              entity: media_player.google_nest_hub
+              sliderWidth: 100px
+              sliderHeight: 250px
+        styles:
+          entity_picture:
+            - transform: scale(1.4
+            - filter: null
+          name:
+            - transform: scale(1.5
+            - font-weight: null
+          grid:
+            - position: relative
+          custom_fields:
+            test:
+              - background-color: |
+                  [[[
+                    if (states['media_player.google_nest_hub'].state == 'playing')
+                      return "green";
+                    return "red";
+                  ]]]
+              - border-radius: 50%
+              - position: absolute
+              - left: 80%
+              - top: 10%
+              - height: 20px
+              - width: 20px
+              - font-size: 8px
+              - line-height: 20px
+          card:
+            - transform: scale(0.7
+            - border-radius: 20%
+            - background-color: black
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+        style: ''
+        custom_fields:
+          test: |
+            [[[ return (states['media_player.google_nest_hub'].state ) ]]] 
+        type: 'custom:button-card'
+      - entity: media_player.miboxs
+        name: mi box s
+        entity_picture: /local/xiao4.png
+        show_entity_picture: true
+        aspect_ratio: 1/1
+        hold_action:
+          action: more-info
+        tap_action:
+          action: call-service
+          service: browser_mod.popup
+          service_data:
+            title: volume
+            card:
+              type: 'custom:media_player-popup-card'
+              entity: media_player.miboxs
+              sliderWidth: 100px
+              sliderHeight: 250px
+        styles:
+          value: 'off'
+          entity_picture:
+            - transform: scale(1.4
+            - filter: null
+          name:
+            - transform: scale(1.5
+          grid:
+            - position: relative
+          custom_fields:
+            notification:
+              - background-color: |
+                  [[[
+                    if (states['media_player.miboxs'].state == 'playing')
+                      return "green";
+                    return "red";
+                  ]]]
+              - border-radius: 50%
+              - position: absolute
+              - left: 80%
+              - top: 10%
+              - height: 20px
+              - width: 20px
+              - font-size: 8px
+              - line-height: 20px
+          card:
+            - transform: scale(0.7
+            - border-radius: 20%
+            - background-color: black
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+        custom_fields:
+          notification: |
+            [[[ return (states['media_player.miboxs'].state ) ]]] 
+        type: 'custom:button-card'
+  - type: horizontal-stack
+    cards:
+      - entity: group.media_player
+        show_name: false
+        entity_picture: /local/volume.gif
+        show_entity_picture: true
+        aspect_ratio: 1/1
+        tap_action:
+          action: more-info
+        styles:
+          card:
+            - background-color: black
+            - transform: scale(0.7
+            - border-radius: 30px
+            - box-shadow: null
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+          entity_picture:
+            - transform: scale(1.5
+        type: 'custom:button-card'
+      - entity: media_player.tele_panasonic
+        name: tv
+        entity_picture: /local/panas1.png
+        show_entity_picture: true
+        aspect_ratio: 1/1
+        hold_action:
+          action: more-info
+        tap_action:
+          action: call-service
+          service: browser_mod.popup
+          service_data:
+            title: volume
+            card:
+              type: 'custom:media_player-popup-card'
+              entity: media_player.tele_panasonic
+              sliderWidth: 100px
+              sliderHeight: 250px
+        styles:
+          entity_picture:
+            - transform: scale(1.8
+            - filter: null
+          name:
+            - transform: scale(1.5
+          grid:
+            - position: relative
+          custom_fields:
+            notification:
+              - background-color: |
+                  [[[
+                    if (states['media_player.tele_panasonic'].state == 'playing')
+                      return "green";
+                    return "red";
+                  ]]]
+              - border-radius: 50%
+              - position: absolute
+              - left: 80%
+              - top: 10%
+              - height: 20px
+              - width: 20px
+              - font-size: 8px
+              - line-height: 20px
+          card:
+            - transform: scale(0.7
+            - border-radius: 20%
+            - background-color: black
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+        custom_fields:
+          notification: |
+            [[[ return (states['media_player.tele_panasonic'].state  ) ]]] 
+        type: 'custom:button-card'
+      - entity: media_player.lg_webos_smart_tv
+        name: tv
+        entity_picture: /local/lg1.png
+        show_entity_picture: true
+        aspect_ratio: 1/1
+        hold_action:
+          action: more-info
+        tap_action:
+          action: call-service
+          service: browser_mod.popup
+          service_data:
+            title: volume
+            card:
+              type: 'custom:media_player-popup-card'
+              entity: media_player.lg_webos_smart_tv
+              sliderWidth: 100px
+              sliderHeight: 250px
+        styles:
+          entity_picture:
+            - transform: scale(1.4
+            - filter: null
+          name:
+            - transform: scale(1.5
+          grid:
+            - position: relative
+          custom_fields:
+            notification:
+              - background-color: |
+                  [[[
+                    if (states['media_player.lg_webos_smart_tv'].state == 'on')
+                      return "green";
+                    return "red";
+                  ]]]
+              - border-radius: 50%
+              - position: absolute
+              - left: 80%
+              - top: 10%
+              - height: 20px
+              - width: 20px
+              - font-size: 8px
+              - line-height: 20px
+          card:
+            - transform: scale(0.7
+            - border-radius: 20%
+            - background-color: black
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+        custom_fields:
+          notification: |
+            [[[ return (states['media_player.lg_webos_smart_tv'].state) 
+              ]]] 
+        type: 'custom:button-card'
+  - type: horizontal-stack
+    cards:
+      - entity: input_boolean.info_view
+        entity_picture: /local/youtube4.gif
+        show_entity_picture: true
+        show_name: false
+        aspect_ratio: 1/1
+        show_state: null
+        tap_action:
+          action: navigate
+          navigation_path: '#p1'
+        styles:
+          card:
+            - background-color: black
+            - transform: null
+            - border-radius: 20px
+            - box-shadow: null
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+          entity_picture:
+            - transform: scale(2
+        type: 'custom:button-card'
+      - entity: input_boolean.info_view
+        entity_picture: /local/radio.gif
+        show_entity_picture: true
+        show_name: false
+        aspect_ratio: 1/1
+        show_state: null
+        tap_action:
+          action: navigate
+          navigation_path: '#p2'
+        styles:
+          card:
+            - background-color: black
+            - transform: null
+            - border-radius: 20px
+            - box-shadow: null
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+          entity_picture:
+            - transform: scale(2.5
+        type: 'custom:button-card'
+      - entity: input_boolean.info_view
+        entity_picture: /local/cinema.gif
+        show_entity_picture: true
+        show_name: false
+        aspect_ratio: 1/1
+        show_state: null
+        tap_action:
+          action: navigate
+          navigation_path: '#p3'
+        styles:
+          card:
+            - background-color: black
+            - transform: null
+            - border-radius: 20px
+            - box-shadow: null
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+          entity_picture:
+            - transform: scale(2
+        type: 'custom:button-card'
+  - type: 'custom:state-switch'
+    entity: hash
+    default: p1
+    states:
+      p1:
+        type: picture-elements
+        elements:
+          - type: image
+            entity: sensor.youtube
+            state_image:
+              rosalia/relacion: /local/rosalia1.gif
+              rnb 90: /local/rnb.gif
+              relax: /local/relax.gif
+              80 hit: /local/80.gif
+              GG d AG: /local/gg.gif
+              queen/highlander: /local/queen.gif
+            style:
+              left: 50%
+              top: 50%
+              width: 130%
+            tap_action:
+              action: call-service
+              service: browser_mod.popup
+              service_data:
+                title: youtube
+                card:
+                  type: entities
+                  entities:
+                    - entity: input_select.youtube
+                    - entity: script.youtube
+                    - entity: input_select.device
+                  state_color: true
+        image: /local/sfondo4.jpg
+      p2:
+        type: picture-elements
+        image: /local/sfondo4.jpg
+        elements:
+          - type: image
+            entity: sensor.radio
+            state_image:
+              radio 105: /local/105.gif
+              radio deejay: /local/deejay1.gif
+              RTL: /local/rtl1.gif
+              virgin radio: /local/virgin.gif
+            style:
+              left: 50%
+              top: 50%
+              width: 110%
+            tap_action:
+              action: call-service
+              service: browser_mod.popup
+              service_data:
+                title: online radio
+                card:
+                  type: entities
+                  entities:
+                    - entity: input_select.online_radio
+                    - entity: script.radio
+                    - entity: input_select.device
+      p3:
+        type: picture-elements
+        image: /local/sfondo4.jpg
+        elements:
+          - type: image
+            entity: sensor.film_streaming
+            state_image:
+              doctor_strange: /local/doctor_strange.gif
+              terminator2: /local/terminator2.gif
+              back_to_the_future: /local/back_to_the_future.gif
+            style:
+              left: 50%
+              top: 50%
+              width: 120%
+            tap_action:
+              action: call-service
+              service: browser_mod.popup
+              service_data:
+                title: film streaming
+                card:
+                  type: entities
+                  entities:
+                    - entity: input_select.film_streaming
+                    - entity: script.film
+                    - entity: input_select.device
+  - entity: sensor.hass_installed_version
+    entity_picture: /local/back2.gif
+    show_entity_picture: true
+    show_name: false
+    aspect_ratio: 3.5/1
+    show_state: null
+    tap_action:
+      action: navigate
+      navigation_path: lovelace/front
+    styles:
+      card:
+        - background-color: black
+        - '--mdc-ripple-color': yellow
+        - '--mdc-ripple-press-opacity': 0.5
+        - transform: scale(1
+        - border-radius: 20px
+        - box-shadow: null
+      entity_picture:
+        - transform: scale(0.7
+    type: 'custom:button-card'
