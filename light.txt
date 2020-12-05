@@ -1,0 +1,799 @@
+type: vertical-stack 
+cards:
+  - cards:
+      - entity: light.luce_sala_light
+        name: sala
+        entity_picture: /local/luce3.png
+        show_entity_picture: true
+        aspect_ratio: 1/1
+        hold_action:
+          action: call-service
+          service: browser_mod.popup
+          service_data:
+            title: sala
+            card:
+              type: 'custom:light-popup-card'
+              entity: light.luce_sala_light
+              icon: none
+              fullscreen: false
+              brightnessWidth: 130px
+              brightnessHeight: 360px
+              borderRadius: 1.7em
+              sliderColor: '#c7c7c7'
+              sliderTrackColor: 'rgba(25, 25, 25, 0.9)'
+              actionSize: 4.5em
+              actionsInARow: 2
+        state:
+          - color: 'rgb(255,100,100)'
+            icon: 'mdi:lightbulb'
+            styles:
+              entity_picture:
+                - filter: grayscale(80%)
+              card:
+                - transform: null
+                - background-color: black
+                - border-radius: 20px
+            value: 'off'
+          - color: 'rgb(0,0,255)'
+            icon: 'mdi:lightbulb-on'
+            styles:
+              card:
+                - background-color: black
+                - transform: null
+                - border-radius: 20px
+                - box-shadow: null
+              entity_picture:
+                - transform: null
+                - animation: var(--my-heartbeat)
+            value: 'on'
+        style: |
+          @keyframes heartbeat {
+            from {
+              transform: scale(1);
+              transform-origin: center center;
+              animation-timing-function: ease-out;
+            }
+            10% {
+              transform: scale(0.91);
+              animation-timing-function: ease-in;
+            }
+            17% {
+              transform: scale(0.98);
+              animation-timing-function: ease-out;
+            }
+            33% {
+              transform: scale(0.87);
+              animation-timing-function: ease-in;
+            }
+            45% {
+              transform: scale(1);
+              animation-timing-function: ease-out;
+            }
+          }
+          ha-card {
+            --my-heartbeat: heartbeat 1.5s ;
+          }      
+        styles:
+          card:
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+        type: 'custom:button-card'
+      - entity: light.luce_sala_rgb_light
+        name: sala rgb
+        entity_picture: /local/luce3.png
+        show_entity_picture: true
+        aspect_ratio: 1/1
+        hold_action:
+          action: call-service
+          service: browser_mod.popup
+          service_data:
+            title: sala rgb
+            card:
+              type: 'custom:light-popup-card'
+              entity: light.luce_sala_rgb_light
+              icon: none
+              fullscreen: false
+              brightnessWidth: 130px
+              brightnessHeight: 360px
+              borderRadius: 1.7em
+              sliderColor: '#c7c7c7'
+              sliderTrackColor: 'rgba(25, 25, 25, 0.9)'
+              actionSize: 4.5em
+              actionsInARow: 2
+        state:
+          - color: 'rgb(255,100,100)'
+            icon: 'mdi:lightbulb'
+            styles:
+              entity_picture:
+                - filter: grayscale(80%)
+              card:
+                - transform: null
+                - border-radius: 20px
+                - background-color: black
+            value: 'off'
+          - color: 'rgb(0,0,255)'
+            icon: 'mdi:lightbulb-on'
+            styles:
+              card:
+                - background-color: 'rgb(95,95,95)'
+                - transform: null
+                - border-radius: 20px
+                - box-shadow: null
+              entity_picture:
+                - transform: null
+                - animation: var(--my-heartbeat)
+            value: 'on'
+        style: |
+          @keyframes heartbeat {
+            from {
+              transform: scale(1);
+              transform-origin: center center;
+              animation-timing-function: ease-out;
+            }
+            10% {
+              transform: scale(0.91);
+              animation-timing-function: ease-in;
+            }
+            17% {
+              transform: scale(0.98);
+              animation-timing-function: ease-out;
+            }
+            33% {
+              transform: scale(0.87);
+              animation-timing-function: ease-in;
+            }
+            45% {
+              transform: scale(1);
+              animation-timing-function: ease-out;
+            }
+          }
+          ha-card {
+            --my-heartbeat: heartbeat 1.5s ;
+          }       
+        styles:
+          card:
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+        type: 'custom:button-card'
+      - entity: light.luce_cucina_light
+        name: cucina
+        aspect_ratio: 1/1
+        entity_picture: /local/luce3.png
+        show_entity_picture: true
+        hold_action:
+          action: call-service
+          service: browser_mod.popup
+          service_data:
+            title: cucina
+            card:
+              type: 'custom:light-popup-card'
+              entity: light.luce_cucina_light
+              icon: none
+              fullscreen: false
+              brightnessWidth: 130px
+              brightnessHeight: 360px
+              borderRadius: 1.7em
+              sliderColor: '#c7c7c7'
+              sliderTrackColor: 'rgba(25, 25, 25, 0.9)'
+              actionSize: 4.5em
+              actionsInARow: 2
+        state:
+          - color: 'rgb(255,100,100)'
+            styles:
+              entity_picture:
+                - filter: grayscale(80%)
+              card:
+                - transform: null
+                - border-radius: 20px
+                - background-color: black
+            value: 'off'
+          - color: 'rgb(0,0,255)'
+            icon: 'mdi:lightbulb-on'
+            styles:
+              card:
+                - background-color: black
+                - transform: null
+                - border-radius: 20px
+                - box-shadow: null
+              entity_picture:
+                - animation: var(--my-heartbeat)
+                - transform: null
+            value: 'on'
+        style: |
+          @keyframes heartbeat {
+            from {
+              transform: scale(1);
+              transform-origin: center center;
+              animation-timing-function: ease-out;
+            }
+            10% {
+              transform: scale(0.91);
+              animation-timing-function: ease-in;
+            }
+            17% {
+              transform: scale(0.98);
+              animation-timing-function: ease-out;
+            }
+            33% {
+              transform: scale(0.87);
+              animation-timing-function: ease-in;
+            }
+            45% {
+              transform: scale(1);
+              animation-timing-function: ease-out;
+            }
+          }
+          ha-card {
+            --my-heartbeat: heartbeat 1.5s ;
+          }       
+        styles:
+          card:
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+        type: 'custom:button-card'
+    type: horizontal-stack
+  - cards:
+      - entity: light.xiaomi_gateway_light
+        name: xiaomi light
+        aspect_ratio: 1/1
+        entity_picture: /local/luce3.png
+        show_entity_picture: true
+        hold_action:
+          action: call-service
+          service: browser_mod.popup
+          service_data:
+            title: xiaomi
+            card:
+              type: 'custom:light-popup-card'
+              entity: light.xiaomi_gateway_light
+              icon: none
+              fullscreen: false
+              brightnessWidth: 130px
+              brightnessHeight: 360px
+              borderRadius: 1.7em
+              sliderColor: '#c7c7c7'
+              sliderTrackColor: 'rgba(25, 25, 25, 0.9)'
+              actionSize: 4.5em
+              actionsInARow: 2
+        state:
+          - color: null
+            styles:
+              card:
+                - transform: null
+                - background-color: black
+                - border-radius: 20px
+              entity_picture:
+                - filter: grayscale(80%)
+            value: 'off'
+          - color: 'rgb(0,0,255)'
+            styles:
+              card:
+                - background-color: black
+                - transform: )
+                - border-radius: 20px
+                - box-shadow: null
+              entity_picture:
+                - animation: var(--my-heartbeat)
+            value: 'on'
+        style: |
+          @keyframes heartbeat {
+            from {
+              transform: scale(1);
+              transform-origin: center center;
+              animation-timing-function: ease-out;
+            }
+            10% {
+              transform: scale(0.91);
+              animation-timing-function: ease-in;
+            }
+            17% {
+              transform: scale(0.98);
+              animation-timing-function: ease-out;
+            }
+            33% {
+              transform: scale(0.87);
+              animation-timing-function: ease-in;
+            }
+            45% {
+              transform: scale(1);
+              animation-timing-function: ease-out;
+            }
+          }
+          ha-card {
+            --my-heartbeat: heartbeat 1.5s ;
+          }       
+        styles:
+          card:
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+        type: 'custom:button-card'
+      - entity: light.luce_letto2_light
+        name: letto2
+        show_icon: true
+        aspect_ratio: 1/1
+        entity_picture: /local/luce3.png
+        show_entity_picture: true
+        hold_action:
+          action: call-service
+          service: browser_mod.popup
+          service_data:
+            title: letto2
+            card:
+              type: 'custom:light-popup-card'
+              entity: light.luce_letto2_light
+              icon: none
+              fullscreen: false
+              brightnessWidth: 130px
+              brightnessHeight: 360px
+              borderRadius: 1.7em
+              sliderColor: '#c7c7c7'
+              sliderTrackColor: 'rgba(25, 25, 25, 0.9)'
+              actionSize: 4.5em
+              actionsInARow: 2
+        state:
+          - color: 'rgb(255,100,100)'
+            styles:
+              entity_picture:
+                - filter: grayscale(80%)
+              card:
+                - background-color: black
+                - transform: null
+                - border-radius: 20px
+            value: 'off'
+          - color: 'rgb(0,0,255)'
+            styles:
+              card:
+                - background-color: black
+                - transform: null
+                - border-radius: 20px
+                - box-shadow: null
+              entity_picture:
+                - animation: var(--my-heartbeat)
+            value: 'on'
+        style: |
+          @keyframes heartbeat {
+            from {
+              transform: scale(1);
+              transform-origin: center center;
+              animation-timing-function: ease-out;
+            }
+            10% {
+              transform: scale(0.91);
+              animation-timing-function: ease-in;
+            }
+            17% {
+              transform: scale(0.98);
+              animation-timing-function: ease-out;
+            }
+            33% {
+              transform: scale(0.87);
+              animation-timing-function: ease-in;
+            }
+            45% {
+              transform: scale(1);
+              animation-timing-function: ease-out;
+            }
+          }
+          ha-card {
+            --my-heartbeat: heartbeat 1.5s ;
+          }   
+        styles:
+          card:
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+        type: 'custom:button-card'
+      - entity: light.luce_letto1_light
+        entity_picture: /local/luce3.png
+        show_entity_picture: true
+        name: letto1
+        show_icon: true
+        aspect_ratio: 1/1
+        hold_action:
+          action: call-service
+          service: browser_mod.popup
+          service_data:
+            title: letto1
+            card:
+              type: 'custom:light-popup-card'
+              entity: light.luce_letto1_light
+              icon: none
+              fullscreen: false
+              brightnessWidth: 130px
+              brightnessHeight: 360px
+              borderRadius: 1.7em
+              sliderColor: '#c7c7c7'
+              sliderTrackColor: 'rgba(25, 25, 25, 0.9)'
+              actionSize: 4.5em
+              actionsInARow: 2
+        state:
+          - color: 'rgb(255,100,100)'
+            styles:
+              entity_picture:
+                - filter: grayscale(80%)
+              card:
+                - background-color: black
+                - border-radius: 20px
+                - transform: null
+            value: 'off'
+          - color: 'rgb(0,0,255)'
+            styles:
+              card:
+                - background-color: blak
+                - transform: null
+                - border-radius: 20px
+                - box-shadow: null
+              entity_picture:
+                - animation: var(--my-heartbeat)
+            value: 'on'
+        style: |
+          @keyframes heartbeat {
+            from {
+              transform: scale(1);
+              transform-origin: center center;
+              animation-timing-function: ease-out;
+            }
+            10% {
+              transform: scale(0.91);
+              animation-timing-function: ease-in;
+            }
+            17% {
+              transform: scale(0.98);
+              animation-timing-function: ease-out;
+            }
+            33% {
+              transform: scale(0.87);
+              animation-timing-function: ease-in;
+            }
+            45% {
+              transform: scale(1);
+              animation-timing-function: ease-out;
+            }
+          }
+          ha-card {
+            --my-heartbeat: heartbeat 1.5s ;
+          }       
+        styles:
+          card:
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+        type: 'custom:button-card'
+    type: horizontal-stack
+  - type: horizontal-stack
+    cards:
+      - entity: light.luce_corridoio_light
+        name: corridoio
+        aspect_ratio: 1/1
+        entity_picture: /local/luce3.png
+        show_entity_picture: true
+        hold_action:
+          action: call-service
+          service: browser_mod.popup
+          service_data:
+            title: corridoio
+            card:
+              type: 'custom:light-popup-card'
+              entity: light.luce_corridoio_light
+              icon: none
+              fullscreen: false
+              brightnessWidth: 130px
+              brightnessHeight: 360px
+              borderRadius: 1.7em
+              sliderColor: '#c7c7c7'
+              sliderTrackColor: 'rgba(25, 25, 25, 0.9)'
+              actionSize: 4.5em
+              actionsInARow: 2
+        state:
+          - color: 'rgb(255,100,100)'
+            ico: 'mdi:bulb'
+            styles:
+              entity_picture:
+                - filter: grayscale(80%)
+              card:
+                - transform: null
+                - background-color: black
+                - border-radius: 20px
+            value: 'off'
+          - color: 'rgb(0,0,255)'
+            icon: 'mdi:lightbulb-on'
+            styles:
+              card:
+                - background-color: black
+                - transform: null
+                - border-radius: 20px
+                - box-shadow: null
+              entity_picture:
+                - animation: var(--my-heartbeat)
+                - transform: null
+            value: 'on'
+        style: |
+          @keyframes heartbeat {
+            from {
+              transform: scale(1);
+              transform-origin: center center;
+              animation-timing-function: ease-out;
+            }
+            10% {
+              transform: scale(0.91);
+              animation-timing-function: ease-in;
+            }
+            17% {
+              transform: scale(0.98);
+              animation-timing-function: ease-out;
+            }
+            33% {
+              transform: scale(0.87);
+              animation-timing-function: ease-in;
+            }
+            45% {
+              transform: scale(1);
+              animation-timing-function: ease-out;
+            }
+          }
+          ha-card {
+            --my-heartbeat: heartbeat 1.5s ;
+          }       
+        styles:
+          card:
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+        type: 'custom:button-card'
+      - entity: light.luce_bagno_light
+        name: bagno
+        aspect_ratio: 1/1
+        entity_picture: /local/luce3.png
+        show_entity_picture: true
+        hold_action:
+          action: call-service
+          service: browser_mod.popup
+          service_data:
+            title: bagno
+            card:
+              type: 'custom:light-popup-card'
+              entity: light.luce_bagno_light
+              icon: none
+              fullscreen: false
+              brightnessWidth: 130px
+              brightnessHeight: 360px
+              borderRadius: 1.7em
+              sliderColor: '#c7c7c7'
+              sliderTrackColor: 'rgba(25, 25, 25, 0.9)'
+              actionSize: 4.5em
+              actionsInARow: 2
+        state:
+          - color: 'rgb(255,100,100)'
+            icon: 'mdi:lightbulb'
+            styles:
+              entity_picture:
+                - filter: grayscale(80%)
+              card:
+                - transform: scale(1
+                - background-color: black
+                - border-radius: 20px
+            value: 'off'
+          - color: 'rgb(0,0,255)'
+            icon: 'mdi:lightbulb-on'
+            styles:
+              card:
+                - background-color: black
+                - transform: ) scale(0.95)
+                - border-radius: 20px
+                - box-shadow: null
+              entity_picture:
+                - animation: var(--my-heartbeat)
+            value: 'on'
+        style: |
+          @keyframes heartbeat {
+            from {
+              transform: scale(1);
+              transform-origin: center center;
+              animation-timing-function: ease-out;
+            }
+            10% {
+              transform: scale(0.91);
+              animation-timing-function: ease-in;
+            }
+            17% {
+              transform: scale(0.98);
+              animation-timing-function: ease-out;
+            }
+            33% {
+              transform: scale(0.87);
+              animation-timing-function: ease-in;
+            }
+            45% {
+              transform: scale(1);
+              animation-timing-function: ease-out;
+            }
+          }
+          ha-card {
+            --my-heartbeat: heartbeat 1.5s ;
+          }       
+        styles:
+          card:
+            - '--mdc-ripple-color': yellow
+            - '--mdc-ripple-press-opacity': 0.5
+        type: 'custom:button-card'
+      - entity: climate.rpi
+        name: rpi
+        icon: 'mdi:fan'
+        show_icon: true
+        aspect_ratio: 1/1
+        state:
+          - color: 'rgb(255,100,100)'
+            icon: 'mdi:fan'
+            styles:
+              card:
+                - transform: null
+                - background-color: black
+            value: 'off'
+          - color: 'rgb(192,192,192)'
+            icon: 'mdi:fan'
+            styles:
+              card:
+                - background-color: black
+                - '--mdc-ripple-color': yellow
+                - '--mdc-ripple-press-opacity': 0.5
+                - transform: null
+                - border-radius: 20px
+                - box-shadow: null
+              icon:
+                - transform: null
+                - animation: var(--my-rotate)
+                - color: white
+            value: cool
+        style: |
+          @keyframes rotate {
+            0% { transform: rotate(0deg); } 
+            12.5% { transform: rotate(45deg); }
+            25% { transform: rotate(90deg); }
+            37.5% { transform: rotate(135deg); }
+            50% { transform: rotate(180deg); } 
+            62.5% { transform: rotate(225deg); }
+            75% { transform: rotate(270deg); }
+            87.5% { transform: rotate(315deg); }
+            100% { transform: rotate(360deg); }
+           }
+           ha-icon {
+             --my-rotate: rotate 1s infinite  
+           }
+        tap_action:
+          action: toggle
+        type: 'custom:button-card'
+  - cards:
+      - entity: switch.smartplug_letto1_switch
+        name: letto1
+        entity_picture: /local/flash1.png
+        show_entity_picture: true
+        aspect_ratio: 1/1
+        tap_action:
+          action: more-info
+        state:
+          - color: null
+            icon: null
+            styles:
+              card:
+                - transform: scale(1
+              entity_picture:
+                - filter: grayscale(100%)
+            value: 'off'
+          - color: 'rgb(0,0,255)'
+            styles:
+              card:
+                - background-color: black
+                - transform: null
+                - border-radius: 20px
+                - box-shadow: null
+              entity_picture:
+                - animation: var( --my-vibrate-1 )
+                - transform: null
+            value: 'on'
+        style: |
+          @keyframes vibrate-1 {
+             0%{transform: translate(0);}
+             20%{transform: translate(-1px, 1px);}
+             40%{transform: translate(-1px, -1px);}
+             60%{transform: translate(1px, 1px);}
+             80%{transform: translate(1px, -1px);}
+             100%{transform: translate(0);}  
+           }
+           ha-card {
+            --my-vibrate-1: vibrate-1 300ms infinite;
+           }    
+        type: 'custom:button-card'
+      - entity: switch.smartplug_sala_switch
+        name: sala
+        aspect_ratio: 1/1
+        entity_picture: /local/flash1.png
+        show_entity_picture: true
+        tap_action:
+          action: more-info
+        state:
+          - color: 'rgb(255,100,100)'
+            icon: null
+            styles:
+              card:
+                - transform: null
+            value: 'off'
+          - color: 'rgb(0,0,255)'
+            styles:
+              card:
+                - background-color: black
+                - transform: null
+                - border-radius: 20px
+                - box-shadow: null
+              entity_picture:
+                - transform: scale(1.1)
+                - animation: var( --my-vibrate-1 )
+            value: 'on'
+        style: |
+          @keyframes vibrate-1 {
+             0%{transform: translate(0);}
+             20%{transform: translate(-1px, 1px);}
+             40%{transform: translate(-1px, -1px);}
+             60%{transform: translate(1px, 1px);}
+             80%{transform: translate(1px, -1px);}
+             100%{transform: translate(0);}  
+           }
+           ha-card {
+            --my-vibrate-1: vibrate-1 300ms infinite;
+           }    
+        type: 'custom:button-card'
+      - entity: switch.smartplug_ups_switch
+        name: ups
+        entity_picture: /local/flash1.png
+        show_entity_picture: true
+        aspect_ratio: 1/1
+        tap_action:
+          action: more-info
+        state:
+          - color: 'rgb(255,100,100)'
+            icon: 'mdi:flash'
+            styles:
+              card:
+                - transform: null
+            value: 'off'
+          - color: 'rgb(0,0,255)'
+            styles:
+              card:
+                - background-color: black
+                - transform: null
+                - border-radius: 20px
+                - box-shadow: null
+              entity_picture:
+                - transform: scale(1.1)
+                - animation: var( --my-vibrate-1 )
+            value: 'on'
+        style: |
+          @keyframes vibrate-1 {
+             0%{transform: translate(0);}
+             20%{transform: translate(-1px, 1px);}
+             40%{transform: translate(-1px, -1px);}
+             60%{transform: translate(1px, 1px);}
+             80%{transform: translate(1px, -1px);}
+             100%{transform: translate(0);}  
+           }
+           ha-card {
+            --my-vibrate-1: vibrate-1 300ms infinite;
+           }    
+        type: 'custom:button-card'
+    type: horizontal-stack
+  - entity: sensor.hass_installed_version
+    entity_picture: /local/back2.gif
+    show_entity_picture: true
+    show_name: false
+    aspect_ratio: 3.5/1
+    show_state: null
+    tap_action:
+      action: navigate
+      navigation_path: lovelace/front
+    styles:
+      card:
+        - background-color: black
+        - '--mdc-ripple-color': yellow
+        - '--mdc-ripple-press-opacity': 0.5
+        - transform: scale(1
+        - border-radius: 20px
+        - box-shadow: null
+      entity_picture:
+        - transform: scale(0.7
+    type: 'custom:button-card'
