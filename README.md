@@ -64,6 +64,8 @@ you need to install:
 
 ![20201206_121746](https://user-images.githubusercontent.com/68069659/101278767-0a3cc200-37be-11eb-94b3-0cd98763ade2.gif)
 
+graphics with autoplay, cool!
+
 do you want the code? look [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/graphics.txt)
 
 # mediacenter
