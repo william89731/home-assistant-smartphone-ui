@@ -1,6 +1,16 @@
 # home-assistant-smartphone-ui
 
-i used the vertical and horizontal stack.
+hey, this is my lovelace customization. if you like it, leave a star.
+
+thanks for the change of the theme to [romans3](https://github.com/romans3);
+
+thanks for the video on tiktok to mr ingrid from [hassiohelp](https://hassiohelp.eu).
+
+
+
+
+
+I used the vertical and horizontal stack.
 
 you need to install:
 
@@ -84,6 +94,14 @@ this section was a little complicated. It is well known that playing youtube vid
 ![20201205_205333](https://user-images.githubusercontent.com/68069659/101265342-d625ba80-3745-11eb-9800-ad4f4ac11b80.gif)
 
 do you want th code? look [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/mediacenter.txt)
+
+# gifs and png
+
+![unnamed](https://user-images.githubusercontent.com/68069659/101279122-67d20e00-37c0-11eb-998d-6d4149f57e9f.png)
+
+if you want my images you can find them [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/image1.zip ) , [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/image2.zip) [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/image3.zip)
+
+
 
 
 
