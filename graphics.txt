@@ -1,0 +1,214 @@
+cards: 
+  - type: 'custom:swipe-card'
+    card_width: 80%
+    start_card: 1
+    parameters:
+      effect: coverflow
+      grabCursor: true
+      centeredSlides: true
+      slidesPerView: auto
+      coverflowEffect:
+        rotate: 50
+        stretch: 0
+        depth: 100
+        modifier: 1
+        slideShadows: true
+      spaceBetween: 10
+      pagination:
+        type: null
+    cards:
+      - name: home temperature
+        entities:
+          - sensor.temperatura_casa_temperature
+        hours_to_show: 48
+        show:
+          extrema: true
+          average: true
+        y_axis: secondary
+        type: 'custom:mini-graph-card'
+        style: |
+          ha-card {
+            background-color: black;
+           color: blue ;
+           
+           
+          }
+      - name: home humidity
+        entities:
+          - sensor.0x00158d00040e1174_humidity
+        hours_to_show: 48
+        show:
+          extrema: true
+          average: true
+        y_axis: secondary
+        type: 'custom:mini-graph-card'
+        style: |
+          ha-card {
+            background-color: black;
+           color: blue ;
+           
+          }
+  - type: 'custom:swipe-card'
+    card_width: 50%
+    start_card: 1
+    parameters:
+      speed: 500
+      autoplay:
+        delay: 3000
+      effect: cube
+      grabCursor: true
+      centeredSlides: true
+      slidesPerView: auto
+      cubeEffect:
+        slideShadows: false
+      spaceBetween: 1
+      pagination:
+        type: null
+    cards:
+      - name: external temperature
+        entities:
+          - sensor.openweathermap_temperature
+        hours_to_show: 48
+        type: 'custom:mini-graph-card'
+        style: |
+          ha-card {
+            background-color: black;
+          color: blue ; 
+          width: 95%
+          }
+      - name: external humidity
+        entities:
+          - sensor.openweathermap_humidity
+        hours_to_show: 48
+        type: 'custom:mini-graph-card'
+        style: |
+          ha-card {
+           background-color: black;
+          color: blue ;
+          width: 95%
+          }
+      - name: clouds
+        entities:
+          - sensor.openweathermap_cloud_coverage
+        hours_to_show: 48
+        type: 'custom:mini-graph-card'
+        style: |
+          ha-card {
+           background-color: black;
+          color: blue ;
+          width: 95%
+          }
+      - name: pressure
+        entities:
+          - sensor.openweathermap_pressure
+        hours_to_show: 48
+        type: 'custom:mini-graph-card'
+        style: |
+          ha-card {
+           background-color: black;
+          color: blue ;
+          width: 95%
+          }
+      - name: rain
+        entities:
+          - sensor.openweathermap_rain
+        hours_to_show: 48
+        type: 'custom:mini-graph-card'
+        style: |
+          ha-card {
+           background-color: black;
+          color: blue ;
+          width: 95%
+          }
+      - name: wind bearing
+        entities:
+          - sensor.openweathermap_wind_bearing
+        hours_to_show: 48
+        type: 'custom:mini-graph-card'
+        style: |
+          ha-card {
+           background-color: black;
+          color: blue ;
+          width: 95%
+          }
+      - name: wind speed
+        entities:
+          - sensor.openweathermap_wind_speed
+        hours_to_show: 48
+        type: 'custom:mini-graph-card'
+        style: |
+          ha-card {
+           background-color: black;
+          color: blue ;
+          width: 95%
+          }
+      - name: snow
+        entities:
+          - sensor.openweathermap_snow
+        hours_to_show: 48
+        type: 'custom:mini-graph-card'
+        style: |
+          ha-card {
+           background-color: black;
+          color: blue ;
+          width: 95%
+          }
+  - type: 'custom:swipe-card'
+    card_width: 90%
+    start_card: 1
+    parameters:
+      centeredSlides: false
+      slidesPerView: true
+      spaceBetween: 10
+      pagination:
+        type: null
+    cards:
+      - name: coronas italia
+        entities:
+          - sensor.italy_coronavirus_confirmed
+        hours_to_show: 48
+        show:
+          extrema: true
+          average: true
+        type: 'custom:mini-graph-card'
+        style: |
+          ha-card {
+            background-color: black;
+          color: blue ; 
+          width: 95%
+          }
+      - name: coronas wolrd
+        entities:
+          - sensor.worldwide_coronavirus_confirmed
+        hours_to_show: 48
+        show:
+          extrema: true
+          average: true
+        type: 'custom:mini-graph-card'
+        style: |
+          ha-card {
+            background-color: black;
+          color: blue ; 
+          width: 95%
+          }
+  - entity: sensor.hass_installed_version
+    entity_picture: /local/back2.gif
+    show_entity_picture: true
+    show_name: false
+    aspect_ratio: 3.5/1
+    show_state: null
+    tap_action:
+      action: navigate
+      navigation_path: lovelace/front
+    styles:
+      card:
+        - background-color: black
+        - '--mdc-ripple-color': yellow
+        - '--mdc-ripple-press-opacity': 0.5
+        - transform: scale(1
+        - border-radius: 20px
+        - box-shadow: null
+      entity_picture:
+        - transform: scale(0.7
+    type: 'custom:button-card'
+type: vertical-stack
