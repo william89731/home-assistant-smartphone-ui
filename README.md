@@ -1,6 +1,6 @@
 # home-assistant-smartphone-ui
 
-hey, this is my lovelace customization. if you like it, leave a star.
+hey, this is my lovelace customization.
 
 thanks for the change of the theme to [romans3](https://github.com/romans3);
 
