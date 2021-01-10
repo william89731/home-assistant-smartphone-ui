@@ -10,7 +10,7 @@ thanks for the video on tiktok to mr ingrid from [hassiohelp](https://hassiohelp
 
 
 
-I used the vertical and horizontal stack.
+I used the *vertical and *horizontal stack.
 
 you need to install:
 
@@ -20,8 +20,6 @@ you need to install:
 
 
 [button card](https://github.com/custom-cards/button-card)
-
-[OpenWeatherMap](https://www.home-assistant.io/integrations/openweathermap)
 
 
 ![20201205_204614](https://user-images.githubusercontent.com/68069659/101262140-b0e07e80-373c-11eb-9e5f-71adc589817d.gif)
