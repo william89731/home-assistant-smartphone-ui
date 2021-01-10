@@ -10,7 +10,7 @@ thanks for the video on tiktok to mr ingrid from [hassiohelp](https://hassiohelp
 
 
 
-I used the *vertical and *horizontal stack.
+I used the **vertical** and **horizontal stack**.
 
 you need to install:
 
