@@ -18,8 +18,10 @@ you need to install:
 
 [card mod](https://github.com/thomasloven/lovelace-card-mod)
 
-
 [button card](https://github.com/custom-cards/button-card)
+
+[feedparser](https://github.com/custom-components/feedparser)
+
 
 
 ![20210110_194931](https://user-images.githubusercontent.com/68069659/104132449-92922200-537d-11eb-9483-2b1570435c1d.gif)
