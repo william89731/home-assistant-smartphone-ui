@@ -22,7 +22,7 @@ you need to install:
 [button card](https://github.com/custom-cards/button-card)
 
 
-![20201205_204614](https://user-images.githubusercontent.com/68069659/101262140-b0e07e80-373c-11eb-9e5f-71adc589817d.gif)
+![20210110_194931](https://user-images.githubusercontent.com/68069659/104132449-92922200-537d-11eb-9483-2b1570435c1d.gif)
 
 do you want the code? look [here](https://github.com/william89731/home-assistant-smartphone-ui/blob/main/tab%20fronted.txt)
 
